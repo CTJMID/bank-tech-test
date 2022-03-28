@@ -144,6 +144,14 @@ describe('Account', () => {
             expect(account.history[1]).toEqual(300);
         })
 
+        it('should be able to access first trasaction balance in account history', ()  =>  {
+            account.withdrawFunds(100)
+
+            expect(account.history[0]).toEqual(-100);
+        })
+
+
+
 
 
     })

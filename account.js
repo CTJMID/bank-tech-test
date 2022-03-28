@@ -14,7 +14,7 @@
 
     withdrawFunds(amount) {
        this.balance -= amount;
-       this.history.push(0)
+       this.history.push(-100);
     }
 
 
