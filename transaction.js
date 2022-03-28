@@ -7,6 +7,10 @@ class Transaction {
         this.balance = balance;
     }
 
+    format(){
+        return `${this.date} || ${this.credit} || ${this.debit} || ${this.balance}`
+    }
+
 }
 
 module.exports = Transaction;
