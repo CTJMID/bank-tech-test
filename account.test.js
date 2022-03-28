@@ -204,6 +204,12 @@ describe('Account', () => {
             expect(account.printStatement()).toEqual('date || credit || debit || balance')
         })
 
+        it('returns header and transcation info after 1 transcation', () => {
+            account.depositFunds(100, '1/1/2022');
+
+            expect(account.printStatement()).toEqual('date || credit || debit || balance \n 1/1/2022 || 100 ||    || 100')
+        })
+
     })
 
 })

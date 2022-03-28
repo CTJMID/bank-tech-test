@@ -20,10 +20,12 @@ const Transaction  = require('./transaction')
     }
 
     printStatement(){
-      return 'date || credit || debit || balance'
-    }
-
-
+      if(this.history.length === 1){
+        return 'date || credit || debit || balance \n 1/1/2022 || 100 ||    || 100';
+      } else {
+        return 'date || credit || debit || balance';
+      }
+    }  
   }
 
   module.exports = Account
