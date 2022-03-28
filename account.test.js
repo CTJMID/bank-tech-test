@@ -20,4 +20,12 @@ describe('Account', () => {
 
         expect(account.balance).toEqual(200);
     })
+
+    it('Should be able to increase balance by different amounts when a third different deposit is made ', ()  =>  {
+        const account = new Account();
+        account.depositFunds(300)
+
+        expect(account.balance).toEqual(300);
+    })
+
 })
