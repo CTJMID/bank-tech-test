@@ -109,7 +109,13 @@ describe('Account', () => {
             account.depositFunds(100)
 
             expect(account.history.length).toEqual(1);
+        })
 
+        it('should have 2 item after 2 transcation', ()  =>  {
+            account.depositFunds(100)
+            account.depositFunds(100)
+
+            expect(account.history.length).toEqual(2);
         })
     })
 })

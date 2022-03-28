@@ -8,7 +8,8 @@
 
     depositFunds(amount) {
         this.balance += amount;
-        this.history = [1]
+        this.history.push(0)
+
     }
 
     withdrawFunds(amount) {
