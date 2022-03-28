@@ -1,4 +1,4 @@
-  
+const Transaction  = require('./transaction')
   
   class Account {
       constructor() {
@@ -8,14 +8,16 @@
       }
 
     depositFunds(amount, date) {
-        this.balance += amount;
-        this.history.push([date, amount, "  ", this.balance]);
+      this.balance += amount;
+      let depositEvent = new Trasaction(date, amount, "  ", this.balance)
+      this.history.push(depositEvent);
 
     }
 
     withdrawFunds(amount, date) {
-       this.balance -= amount;
-       this.history.push([date, "  ", amount, this.balance]);
+      this.balance -= amount;
+      let withdrawalEvent = new Transaction(date, "  ", amount, this.balance)
+      this.history.push(withdrawalEvent);
     }
 
 
