@@ -12,7 +12,8 @@ class Statement {
     }
 
     formatBody(){
-        this.history.forEach( transaction => 
+        const bodyText = this.history.reverse();
+        bodyText.forEach( transaction => 
            this.body = this.body.concat(`${transaction}\n`)
         );
         return this.body

@@ -11,7 +11,7 @@ describe('Statement', () => {
     it('takes the history and prints them on different lines', ()  => {
         const statement = new Statement(['a','b','c'])
         
-        expect(statement.formatBody()).toEqual(`a\nb\nc\n`)
+        expect(statement.formatBody()).toEqual(`c\nb\na\n`)
     })
 
 

@@ -218,7 +218,7 @@ describe('Account', () => {
             account.depositFunds(100, '1/1/2022');
             account.withdrawFunds(50, '12/12/2000');
 
-            expect(account.printStatement()).toEqual(`${header}${transactionOne}${transactionTwo}`)
+            expect(account.printStatement()).toEqual(`${header}${transactionTwo}${transactionOne}`)
         })
 
     })
