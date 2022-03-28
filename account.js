@@ -5,6 +5,9 @@
           this.balance = 0;
       }
 
+    depositFunds(amount) {
+        this.balance = 100
+    }
 
 
   }
