@@ -13,7 +13,7 @@ class Statement {
 
     formatBody(){
         this.history.forEach( transaction => 
-           this.body =  this.body.concat(`${transaction}\n`)
+           this.body = this.body.concat(`${transaction}\n`)
         );
         return this.body
     }

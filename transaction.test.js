@@ -27,5 +27,10 @@ describe('Trasaction',  () => {
         expect(transaction.balance).toEqual(300)
     })
 
+    it('returns a formatted string when called', () => {
+
+        expect(transaction.format()).toEqual('1/1/2022 || 100 || 200 || 300')
+    })
+
 
 })
