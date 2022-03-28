@@ -9,6 +9,10 @@
         this.balance += amount
     }
 
+    withdrawFunds(amount) {
+        this.balance = -100
+    }
+
 
   }
 

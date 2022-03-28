@@ -8,12 +8,13 @@ describe('Account', () => {
        account = new Account();
       });
 
-    describe ('depositFund', () => {
-        it('Should start with a balanace of zero', () => {
+    
+    it('Should start with a balanace of zero', () => {
 
-            expect(account.balance).toEqual(0);
-        })
+        expect(account.balance).toEqual(0);
+    })
 
+    describe ('depositFunds', () => {
         it('Should have an increased balance when deposit is made', ()  =>  {
             account.depositFunds(100)
 
@@ -46,6 +47,18 @@ describe('Account', () => {
 
             expect(account.balance).toEqual(1200);
         })
+    })
+
+    describe ('withdrawFunds', () => {
+
+        it('Should descrease balance when withdrawal is made', ()  =>  {
+            account.withdrawFunds(100)
+
+            expect(account.balance).toEqual(-100);
+         })
+
+
+    
     })
 
 })
