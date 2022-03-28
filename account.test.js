@@ -141,7 +141,7 @@ describe('Account', () => {
             account.depositFunds(100)
             account.depositFunds(200)
 
-            expect(account.history[1]).toEqual(200);
+            expect(account.history[1]).toEqual(300);
         })
 
 

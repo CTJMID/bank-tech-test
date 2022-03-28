@@ -8,11 +8,7 @@
 
     depositFunds(amount) {
         this.balance += amount;
-        if(amount === 100){
-            this.history.push(100);
-        } else {
-            this.history.push(200);
-        }
+        this.history.push(this.balance);
 
     }
 
