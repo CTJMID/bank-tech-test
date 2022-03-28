@@ -195,11 +195,15 @@ describe('Account', () => {
 
             expect(account.history[0].date).toEqual('1/1/2022')
         })
+    })
 
+    describe ('printStatement', () => {
 
+        it('returns the correct header', () => {
 
-
-
+            expect(account.printStatement()).toEqual('date || credit || debit || balance')
+        })
 
     })
+
 })
