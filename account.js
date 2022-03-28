@@ -20,15 +20,24 @@ const Transaction  = require('./transaction')
     }
 
     printStatement(){
-      const header = 'date || credit || debit || balance'
-      if(this.history.length === 1){
-        return `${header} \n ${this.history[0].date} || ${this.history[0].credit} || ${this.history[0].debit} || ${this.history[0].balance}`;
-      } else if (this.history.length === 2){
-        return `${header} \n ${this.history[0].date} || ${this.history[0].credit} || ${this.history[0].debit} || ${this.history[0].balance} \n ${this.history[1].date} || ${this.history[1].credit} || ${this.history[1].debit} || ${this.history[1].balance}`;
-      } else {
-        return `${header}`;
-      }
+      let statementString = 'date || credit || debit || balance'
+
+      this.history.forEach(event => {
+        let eventString = `\n${event.date} || ${event.credit} || ${event.debit} || ${event.balance}`
+        statementString = statementString.concat(eventString)
+      })
+     
+      return statementString
     }  
   }
 
   module.exports = Account
+
+
+  // if(this.history.length === 1){
+  //   return `${header} \n ${this.history[0].date} || ${this.history[0].credit} || ${this.history[0].debit} || ${this.history[0].balance}`;
+  // } else if (this.history.length === 2){
+  //   return `${header} \n ${this.history[0].date} || ${this.history[0].credit} || ${this.history[0].debit} || ${this.history[0].balance} \n ${this.history[1].date} || ${this.history[1].credit} || ${this.history[1].debit} || ${this.history[1].balance}`;
+  // } else {
+  //   return `${header}`;
+  // }
