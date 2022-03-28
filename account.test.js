@@ -199,6 +199,12 @@ describe('Account', () => {
             expect(account.history[0][0]).toEqual('1/1/2022')
         })
 
+        it('stores the date that a withdrawal is made', () => {
+            account.withdrawFunds(100, '1/1/2022')
+
+            expect(account.history[0][0]).toEqual('1/1/2022')
+        })
+
 
 
 
