@@ -130,5 +130,14 @@ describe('Account', () => {
 
             expect(account.history.length).toEqual(2);
         })
+
+        it('should be able to access balance in account history', ()  =>  {
+            account.depositFunds(100)
+
+            expect(account.history[0]).toEqual(100);
+        })
+
+
+
     })
 })
