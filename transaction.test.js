@@ -9,5 +9,12 @@ describe('Trasaction',  () => {
         expect(transaction.date).toEqual('1/1/2022')
    })
 
+   it('stores the credit amount of the transaction', () => {
+
+        transaction = new Transaction('1/1/2022', 100, 200, 300)
+
+    expect(transaction.credit).toEqual(100)
+})
+
 
 })
