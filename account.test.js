@@ -55,7 +55,13 @@ describe('Account', () => {
             account.withdrawFunds(100)
 
             expect(account.balance).toEqual(-100);
-         })
+        })
+
+        it('Should descrease balance when withdrawal is made', ()  =>  {
+            account.withdrawFunds(200)
+
+            expect(account.balance).toEqual(-200);
+        })
 
 
     
