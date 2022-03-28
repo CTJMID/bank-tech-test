@@ -76,6 +76,14 @@ describe('Account', () => {
             expect(account.balance).toEqual(-700);
         })
 
+        it('Should descrease balance when 2 withdrawals are made', ()  =>  {
+            account.withdrawFunds(300)
+            account.withdrawFunds(400)
+            account.withdrawFunds(500)
+
+            expect(account.balance).toEqual(-1200);
+        })
+
 
     
     })
