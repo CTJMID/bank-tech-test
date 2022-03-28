@@ -9,7 +9,7 @@ const Transaction  = require('./transaction')
 
     depositFunds(amount, date) {
       this.balance += amount;
-      let depositEvent = new Trasaction(date, amount, "  ", this.balance)
+      let depositEvent = new Transaction(date, amount, "  ", this.balance)
       this.history.push(depositEvent);
 
     }
