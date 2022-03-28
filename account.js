@@ -20,12 +20,13 @@ const Transaction  = require('./transaction')
     }
 
     printStatement(){
+      const header = 'date || credit || debit || balance'
       if(this.history.length === 1){
-        return 'date || credit || debit || balance \n 1/1/2022 || 100 ||    || 100';
+        return `${header} \n ${this.history[0].date} || ${this.history[0].credit} || ${this.history[0].debit} || ${this.history[0].balance}`;
       } else if (this.history.length === 2){
-        return 'date || credit || debit || balance \n 1/1/2022 || 100 ||    || 100 \n 12/12/2000 ||    || 50 || 50';
+        return `${header} \n ${this.history[0].date} || ${this.history[0].credit} || ${this.history[0].debit} || ${this.history[0].balance} \n ${this.history[1].date} || ${this.history[1].credit} || ${this.history[1].debit} || ${this.history[1].balance}`;
       } else {
-        return 'date || credit || debit || balance';
+        return `${header}`;
       }
     }  
   }
