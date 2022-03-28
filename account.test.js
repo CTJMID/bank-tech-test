@@ -173,6 +173,15 @@ describe('Account', () => {
             expect(account.history[1][1]).toEqual(200)
         })
 
+        it('allows us to access the deposit amount from the history', () => {
+            account.withdrawFunds(100)
+            account.withdrawFunds(200)
+
+            expect(account.history[0][2]).toEqual(100)
+            expect(account.history[1][2]).toEqual(200)
+        })
+
+
 
 
 

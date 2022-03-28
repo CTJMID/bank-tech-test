@@ -15,7 +15,7 @@
 
     withdrawFunds(amount) {
        this.balance -= amount;
-       this.history.push(['date', 'credit', 'debit', this.balance]);
+       this.history.push(['date', 'credit', amount, this.balance]);
     }
 
 
