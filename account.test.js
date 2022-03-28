@@ -131,10 +131,17 @@ describe('Account', () => {
             expect(account.history.length).toEqual(2);
         })
 
-        it('should be able to access balance in account history', ()  =>  {
+        it('should be able to access first trasaction balance in account history', ()  =>  {
             account.depositFunds(100)
 
             expect(account.history[0]).toEqual(100);
+        })
+
+        it('should be able to access second transaction balance in account history', ()  =>  {
+            account.depositFunds(100)
+            account.depositFunds(200)
+
+            expect(account.history[1]).toEqual(200);
         })
 
 
