@@ -134,27 +134,35 @@ describe('Account', () => {
         it('should be able to access first trasaction balance in account history', ()  =>  {
             account.depositFunds(100)
 
-            expect(account.history[0]).toEqual(100);
+            expect(account.history[0][3]).toEqual(100);
         })
 
         it('should be able to access second transaction balance in account history', ()  =>  {
             account.depositFunds(100)
             account.depositFunds(200)
 
-            expect(account.history[1]).toEqual(300);
+            expect(account.history[1][3]).toEqual(300);
         })
 
         it('should be able to access first trasaction balance in account history', ()  =>  {
             account.withdrawFunds(100)
 
-            expect(account.history[0]).toEqual(-100);
+            expect(account.history[0][3]).toEqual(-100);
         })
 
         it('should be able to access second transaction balance in account history', ()  =>  {
             account.withdrawFunds(100)
             account.withdrawFunds(200)
 
-            expect(account.history[1]).toEqual(-300);
+            expect(account.history[1][3]).toEqual(-300);
+        })
+
+        it('all transcations should have 4 peices of information', () => {
+            account.depositFunds(100)
+            account.withdrawFunds(50)
+
+            expect(account.history[0].length).toEqual(4)
+            expect(account.history[1].length).toEqual(4)
         })
 
 
