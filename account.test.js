@@ -83,9 +83,16 @@ describe('Account', () => {
 
             expect(account.balance).toEqual(-1200);
         })
-
-
-    
     })
+
+    it('Should calculate the balance between multiple depoists and withdrawals', ()  =>  {
+        account.depositFunds(1000)
+        account.withdrawFunds(500)
+        account.depositFunds(800)
+        account.withdrawFunds(400)
+
+        expect(account.balance).toEqual(900);
+    })
+
 
 })
