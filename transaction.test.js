@@ -23,5 +23,12 @@ describe('Trasaction',  () => {
         expect(transaction.debit).toEqual(200)
     })
 
+    it('stores the debit amount of the transaction', () => {
+
+        transaction = new Transaction('1/1/2022', 100, 200, 300)
+
+        expect(transaction.balance).toEqual(300)
+    })
+
 
 })
