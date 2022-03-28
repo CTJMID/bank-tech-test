@@ -14,11 +14,7 @@
 
     withdrawFunds(amount) {
        this.balance -= amount;
-       if( amount === 100){
-        this.history.push(-100);
-       } else {
-       this.history.push(-300);
-       }
+       this.history.push(this.balance);
     }
 
 
