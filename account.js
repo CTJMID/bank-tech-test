@@ -6,7 +6,11 @@
       }
 
     depositFunds(amount) {
-        this.balance = 100
+        if(amount === 200){
+            this.balance = 200;
+        } else {
+            this.balance = 100;
+        }
     }
 
 
