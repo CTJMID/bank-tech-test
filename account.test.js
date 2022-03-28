@@ -99,5 +99,17 @@ describe('Account', () => {
         expect(account.balance).toEqual(900);
     })
 
+    describe ('history', () => {
+        it('Should start with an empty transaction history', () => {
 
+            expect(account.history).toEqual([]);
+        })
+
+        it('should have 1 item after 1 transcation', ()  =>  {
+            account.depositFunds(100)
+
+            expect(account.history.length).toEqual(1);
+
+        })
+    })
 })
