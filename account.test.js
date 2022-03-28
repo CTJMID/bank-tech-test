@@ -150,6 +150,13 @@ describe('Account', () => {
             expect(account.history[0]).toEqual(-100);
         })
 
+        it('should be able to access second transaction balance in account history', ()  =>  {
+            account.withdrawFunds(100)
+            account.withdrawFunds(200)
+
+            expect(account.history[1]).toEqual(-300);
+        })
+
 
 
 
