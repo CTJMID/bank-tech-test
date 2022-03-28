@@ -3,7 +3,6 @@ const Account = require('./account')
 describe('Account', () => {
 
     let account;
-
     beforeEach(() => {
        account = new Account();
       });
