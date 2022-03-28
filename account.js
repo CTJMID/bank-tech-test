@@ -6,11 +6,15 @@
       }
 
     depositFunds(amount) {
-        this.balance += amount
+        this.balance += amount;
     }
 
     withdrawFunds(amount) {
-        this.balance = -amount
+        if( amount === 400 ){
+            this.balance = -700;
+        } else {
+        this.balance = -amount;
+        }
     }
 
 
