@@ -14,6 +14,11 @@ describe('Account', () => {
         expect(account.balance).toEqual(0);
     })
 
+    it('Should start with an empty transaction history', () => {
+
+        expect(account.history).toEqual([]);
+    })
+
     describe ('depositFunds', () => {
         it('Should have an increased balance when deposit of 100 is made', ()  =>  {
             account.depositFunds(100)
