@@ -105,17 +105,23 @@ describe('Account', () => {
             expect(account.history).toEqual([]);
         })
 
-        it('should have 1 item after 1 transcation', ()  =>  {
+        it('should have 1 item after 1 deposit transcation', ()  =>  {
             account.depositFunds(100)
 
             expect(account.history.length).toEqual(1);
         })
 
-        it('should have 2 item after 2 transcation', ()  =>  {
+        it('should have 2 item after 2 deposit transcation', ()  =>  {
             account.depositFunds(100)
             account.depositFunds(100)
 
             expect(account.history.length).toEqual(2);
+        })
+
+        it('should have 1 item after 1 withdrawal transcation', ()  =>  {
+            account.withdrawFunds(100)
+
+            expect(account.history.length).toEqual(1);
         })
     })
 })
