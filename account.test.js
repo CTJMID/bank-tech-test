@@ -123,5 +123,12 @@ describe('Account', () => {
 
             expect(account.history.length).toEqual(1);
         })
+
+        it('should have 2 item after 2 withdrawal transcation', ()  =>  {
+            account.withdrawFunds(100)
+            account.withdrawFunds(100)
+
+            expect(account.history.length).toEqual(2);
+        })
     })
 })
