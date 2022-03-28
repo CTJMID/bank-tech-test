@@ -31,18 +31,20 @@ Key Verbs (methods):
 3. Print Statement - instantiate a statement object
 
 
-Testing Plan:
+## To Run:
 
-Account starts with 0  
-Account methods will trigger chnages in balance  
-Account starts with an empty transcation log  
-Account methods add to the transcation log  
-
-Transaction objects takes 4 arguments  
-Transaction objects can return a date, a credit amount, a debit amount, and a balance  
-The last balance entry equals the account balance
-
-
-
+- open Node in terminal
+- require the account.js file with the following command :
+```
+const Account = require('./account')
+```
+- make an instance of the Account Class
+-  to deposit funds call 'despositFunds(amount, date)', passing the deposit amount and date as arguments.
+-  to deposit funds call 'withdrawFunds(amount, date)', passing the withdrawal amount and date as arguments.
+- to print statement call ' printStatement()', with no arguments
 
 
+
+Please see an example of the met acceptance criteria:
+
+![](./Acceptance-criteria.png)
