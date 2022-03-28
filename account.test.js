@@ -199,15 +199,18 @@ describe('Account', () => {
 
     describe ('printStatement', () => {
 
+        let header = 'date || credit || debit || balance'
+        let transactionOne = '1/1/2022 || 100 ||    || 100'
+
         it('returns the correct header', () => {
 
-            expect(account.printStatement()).toEqual('date || credit || debit || balance')
+            expect(account.printStatement()).toEqual(header)
         })
 
         it('returns header and transcation info after 1 transcation', () => {
             account.depositFunds(100, '1/1/2022');
 
-            expect(account.printStatement()).toEqual('date || credit || debit || balance \n 1/1/2022 || 100 ||    || 100')
+            expect(account.printStatement()).toEqual(`${header} \n ${transactionOne}`)
         })
 
     })
