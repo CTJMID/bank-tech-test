@@ -187,6 +187,12 @@ describe('Account', () => {
             expect(account.history[0][2]).toEqual("  ")
         })
 
+        it('when withdrawing the credit amount is a space', () => {
+            account.withdrawFunds(100)
+
+            expect(account.history[0][1]).toEqual("  ")
+        })
+
 
 
 
