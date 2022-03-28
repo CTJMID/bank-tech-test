@@ -9,7 +9,7 @@
 
     depositFunds(amount) {
         this.balance += amount;
-        this.history.push(['date', amount, 'debit', this.balance]);
+        this.history.push(['date', amount, "  ", this.balance]);
 
     }
 
