@@ -24,6 +24,7 @@ const Statement = require('./statement')
       const statement = new Statement(stringHistory)
       statement.formatHeader();
       statement.formatBody();
+      return statement.body
     }  
   }
 

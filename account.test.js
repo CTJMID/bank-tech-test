@@ -199,9 +199,9 @@ describe('Account', () => {
 
     describe ('printStatement', () => {
 
-        let header = 'date || credit || debit || balance';
-        let transactionOne = '1/1/2022 || 100 ||    || 100';
-        let transactionTwo = '12/12/2000 ||    || 50 || 50';
+        let header = 'date || credit || debit || balance\n';
+        let transactionOne = '1/1/2022 || 100 ||    || 100\n';
+        let transactionTwo = '12/12/2000 ||    || 50 || 50\n';
 
         it('returns the correct header', () => {
 
@@ -211,14 +211,14 @@ describe('Account', () => {
         it('returns header and transcation info after 1 transcation', () => {
             account.depositFunds(100, '1/1/2022');
 
-            expect(account.printStatement()).toEqual(`${header}\n${transactionOne}`)
+            expect(account.printStatement()).toEqual(`${header}${transactionOne}`)
         })
 
         it('returns header and transcation info after 2 transcations', () => {
             account.depositFunds(100, '1/1/2022');
             account.withdrawFunds(50, '12/12/2000');
 
-            expect(account.printStatement()).toEqual(`${header}\n${transactionOne}\n${transactionTwo}`)
+            expect(account.printStatement()).toEqual(`${header}${transactionOne}${transactionTwo}`)
         })
 
     })

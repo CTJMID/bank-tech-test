@@ -5,7 +5,7 @@ describe('Statement', () => {
     it('returns a header when called', () => {
         const statement = new Statement([1,2])
 
-        expect(statement.formatHeader()).toEqual('date || credit || debit || balance')
+        expect(statement.formatHeader()).toEqual('date || credit || debit || balance\n')
     })
 
     it('takes the history and prints them on different lines', ()  => {
