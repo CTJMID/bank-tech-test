@@ -7,9 +7,9 @@
 
       }
 
-    depositFunds(amount) {
+    depositFunds(date, amount) {
         this.balance += amount;
-        this.history.push(['date', amount, "  ", this.balance]);
+        this.history.push([date, amount, "  ", this.balance]);
 
     }
 

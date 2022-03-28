@@ -193,6 +193,12 @@ describe('Account', () => {
             expect(account.history[0][1]).toEqual("  ")
         })
 
+        it('stores the date that a depoist is made', () => {
+            account.depositFunds('1/1/2022', 100)
+
+            expect(account.history[0][0]).toEqual('1/1/2022')
+        })
+
 
 
 
