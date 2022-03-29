@@ -20,10 +20,8 @@ const Statement = require('./statement')
     }
 
     printStatement(){
-      const stringHistory = this.history.map(event => event.formatTransaction());
-      const statement = new Statement(stringHistory)
-      statement.formatHeader();
-      return statement.formatBody();
+      const statement = new Statement(this.history)
+      return statement.convert()
     }  
 
   }

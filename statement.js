@@ -6,17 +6,22 @@ class Statement {
         this.header = 'date || credit || debit || balance'
     };
 
+    convert(){
+        this.history = this.history.map(event => event.formatTransaction());
+        return this.formatHeader();
+    }
+
     formatHeader(){
-       this.body = this.body.concat(`${this.header}\n`);
-       return this.body
+       this.body = this.body.concat(`${this.header}`+ '\n');
+       return this.formatBody();
     }
 
     formatBody(){
         const bodyText = this.history.reverse();
         bodyText.forEach( transaction => 
-           this.body = this.body.concat(`${transaction}\n`)
+           this.body = this.body.concat(`${transaction}`+ '\n')
         );
-        return this.body
+        console.log(this.body)
     }
 }
 
