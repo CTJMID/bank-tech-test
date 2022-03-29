@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/CTJMID/bank-tech-test#readme",
   "dependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "mockdate": "^3.0.5"
   }
 }

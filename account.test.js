@@ -185,13 +185,13 @@ describe('Account', () => {
         })
 
         it('stores the date that a depoist is made', () => {
-            account.depositFunds(100, '1/1/2022')
+            account.depositFunds(100)
 
             expect(account.history[0].date).toEqual('1/1/2022')
         })
 
         it('stores the date that a withdrawal is made', () => {
-            account.withdrawFunds(100, '1/1/2022')
+            account.withdrawFunds(100)
 
             expect(account.history[0].date).toEqual('1/1/2022')
         })
@@ -209,14 +209,14 @@ describe('Account', () => {
         })
 
         it('returns header and transcation info after 1 transcation', () => {
-            account.depositFunds(100, '1/1/2022');
+            account.depositFunds(100);
 
             expect(account.printStatement()).toEqual(`${header}${transactionOne}`)
         })
 
         it('returns header and transcation info after 2 transcations', () => {
-            account.depositFunds(100, '1/1/2022');
-            account.withdrawFunds(50, '12/12/2000');
+            account.depositFunds(100);
+            account.withdrawFunds(50);
 
             expect(account.printStatement()).toEqual(`${header}${transactionTwo}${transactionOne}`)
         })
