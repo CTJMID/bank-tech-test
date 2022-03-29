@@ -8,30 +8,23 @@ const Statement = require('./statement')
     }
 
     depositFunds(amount) {
-      let date = this.formatDate();
       this.balance += amount;
-      let depositEvent = new Transaction(date, amount, "  ", this.balance);
+      let depositEvent = new Transaction(amount, "  ", this.balance);
       this.history.push(depositEvent);
     }
 
     withdrawFunds(amount) {
-      let date = this.formatDate();
       this.balance -= amount;
-      let withdrawalEvent = new Transaction(date, "  ", amount, this.balance);
+      let withdrawalEvent = new Transaction("  ", amount, this.balance);
       this.history.push(withdrawalEvent);
     }
 
     printStatement(){
-      const stringHistory = this.history.map(event => event.format());
+      const stringHistory = this.history.map(event => event.formatTransaction());
       const statement = new Statement(stringHistory)
       statement.formatHeader();
       return statement.formatBody();
     }  
-
-    formatDate(){
-      const date = new Date();
-      return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
-    }
 
   }
 

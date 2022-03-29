@@ -40,8 +40,8 @@ Key Verbs (methods):
 const Account = require('./account')
 ```
 - make an instance of the Account Class
--  to deposit funds call 'despositFunds(amount, date)', passing the deposit amount as argument.
--  to deposit funds call 'withdrawFunds(amount, date)', passing the withdrawal amount as argument.
+-  to deposit funds call 'despositFunds(amount)', passing the deposit amount as argument.
+-  to deposit funds call 'withdrawFunds(amount)', passing the withdrawal amount as argument.
 - to print statement call ' printStatement()', with no arguments
 
 
