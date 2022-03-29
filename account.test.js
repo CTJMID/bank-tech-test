@@ -1,10 +1,12 @@
 const Account = require('./account')
+const MockDate = require('mockdate');
 
 describe('Account', () => {
 
     let account;
     beforeEach(() => {
        account = new Account();
+       MockDate.set(new Date('2021-11-22'));
       });
 
     
@@ -187,21 +189,21 @@ describe('Account', () => {
         it('stores the date that a depoist is made', () => {
             account.depositFunds(100)
 
-            expect(account.history[0].date).toEqual('1/1/2022')
+            expect(account.history[0].date).toEqual('22-11-2021')
         })
 
         it('stores the date that a withdrawal is made', () => {
             account.withdrawFunds(100)
 
-            expect(account.history[0].date).toEqual('1/1/2022')
+            expect(account.history[0].date).toEqual('22-11-2021')
         })
     })
 
     describe ('printStatement', () => {
 
         let header = 'date || credit || debit || balance\n';
-        let transactionOne = '1/1/2022 || 100 ||    || 100\n';
-        let transactionTwo = '12/12/2000 ||    || 50 || 50\n';
+        let transactionOne = '22-11-2021 || 100 ||    || 100\n';
+        let transactionTwo = '12-12-2000 ||    || 50 || 50\n';
 
         it('returns the correct header', () => {
 
@@ -216,6 +218,7 @@ describe('Account', () => {
 
         it('returns header and transcation info after 2 transcations', () => {
             account.depositFunds(100);
+            MockDate.set(new Date('2000-12-12'))
             account.withdrawFunds(50);
 
             expect(account.printStatement()).toEqual(`${header}${transactionTwo}${transactionOne}`)
