@@ -3,11 +3,11 @@ class Statement {
     constructor(history) {
         this.history = history;
         this.body = ''
+        this.header = 'date || credit || debit || balance'
     };
 
     formatHeader(){
-       const header = 'date || credit || debit || balance'
-       this.body = this.body.concat(`${header}\n`);
+       this.body = this.body.concat(`${this.header}\n`);
        return this.body
     }
 
