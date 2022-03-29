@@ -7,13 +7,15 @@ const Statement = require('./statement')
       this.history = [];
     }
 
-    depositFunds(amount, date) {
+    depositFunds(amount) {
+      let date = this.formatDate();
       this.balance += amount;
       let depositEvent = new Transaction(date, amount, "  ", this.balance);
       this.history.push(depositEvent);
     }
 
-    withdrawFunds(amount, date) {
+    withdrawFunds(amount) {
+      let date = this.formatDate();
       this.balance -= amount;
       let withdrawalEvent = new Transaction(date, "  ", amount, this.balance);
       this.history.push(withdrawalEvent);
@@ -25,6 +27,12 @@ const Statement = require('./statement')
       statement.formatHeader();
       return statement.formatBody();
     }  
+
+    formatDate(){
+      const date = new Date();
+      return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+    }
+
   }
 
   module.exports = Account;
