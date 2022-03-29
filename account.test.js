@@ -9,6 +9,10 @@ describe('Account', () => {
        MockDate.set(new Date('2021-11-22'));
       });
 
+    afterEach(() => {
+        MockDate.reset();
+    });
+
     
     it('Should start with a balanace of zero', () => {
 
