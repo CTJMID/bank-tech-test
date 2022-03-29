@@ -33,14 +33,15 @@ Key Verbs (methods):
 
 ## To Run:
 
+- run 'npm init -y' and 'npm install' to install environmnet and dependancies
 - open Node in terminal
 - require the account.js file with the following command :
 ```
 const Account = require('./account')
 ```
 - make an instance of the Account Class
--  to deposit funds call 'despositFunds(amount, date)', passing the deposit amount and date as arguments.
--  to deposit funds call 'withdrawFunds(amount, date)', passing the withdrawal amount and date as arguments.
+-  to deposit funds call 'despositFunds(amount, date)', passing the deposit amount as argument.
+-  to deposit funds call 'withdrawFunds(amount, date)', passing the withdrawal amount as argument.
 - to print statement call ' printStatement()', with no arguments
 
 
@@ -48,3 +49,9 @@ const Account = require('./account')
 Please see an example of the met acceptance criteria:
 
 ![](./Acceptance-criteria.png)
+
+
+### Further Development
+
+- have incororporated a automated and formatted date on transcations
+- have sucessfully isolated this in testing
