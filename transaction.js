@@ -1,14 +1,15 @@
 
 class Transaction {
     constructor(credit, debit, balance) {
-        this.date  = new Date();
+        this.date  = this.formatDate()
         this.credit = credit;
         this.debit = debit;
         this.balance = balance;
     }
 
     formatDate(){
-        this.date = `${this.date.getDate()}-${this.date.getMonth() + 1}-${this.date.getFullYear()}`;
+        let longDate = new Date();
+        return `${longDate.getDate()}-${longDate.getMonth() + 1}-${longDate.getFullYear()}`;
       }
 
     formatTransaction(){
