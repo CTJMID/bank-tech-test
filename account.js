@@ -23,8 +23,7 @@ const Statement = require('./statement')
       const stringHistory = this.history.map(event => event.format());
       const statement = new Statement(stringHistory)
       statement.formatHeader();
-      statement.formatBody();
-      return statement.body
+      return statement.formatBody();
     }  
   }
 
