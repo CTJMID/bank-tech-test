@@ -1,4 +1,4 @@
-const Account = require('./account')
+const Account = require('../lib/account')
 const MockDate = require('mockdate');
 
 describe('Account', () => {
@@ -120,38 +120,38 @@ describe('Account', () => {
 
         it('should be able to access first trasaction balance in account history', ()  =>  {
             account.depositFunds(100)
-            expect(account.history[0].balance).toEqual(100);
+            expect(account.history[0].balance).toEqual('100.00');
         })
 
         it('should be able to access second transaction balance in account history', ()  =>  {
             account.depositFunds(100)
             account.depositFunds(200)
-            expect(account.history[1].balance).toEqual(300);
+            expect(account.history[1].balance).toEqual('300.00');
         })
 
         it('should be able to access first trasaction balance in account history', ()  =>  {
             account.withdrawFunds(100)
-            expect(account.history[0].balance).toEqual(-100);
+            expect(account.history[0].balance).toEqual('-100.00');
         })
 
         it('should be able to access second transaction balance in account history', ()  =>  {
             account.withdrawFunds(100)
             account.withdrawFunds(200)
-            expect(account.history[1].balance).toEqual(-300);
+            expect(account.history[1].balance).toEqual('-300.00');
         })
 
         it('allows us to access the deposit amount from the history', () => {
             account.depositFunds(100)
             account.depositFunds(200)
-            expect(account.history[0].credit).toEqual(100)
-            expect(account.history[1].credit).toEqual(200)
+            expect(account.history[0].credit).toEqual('100.00')
+            expect(account.history[1].credit).toEqual('200.00')
         })
 
         it('allows us to access the withdrawl amount from the history', () => {
             account.withdrawFunds(100)
             account.withdrawFunds(200)
-            expect(account.history[0].debit).toEqual(100)
-            expect(account.history[1].debit).toEqual(200)
+            expect(account.history[0].debit).toEqual('100.00')
+            expect(account.history[1].debit).toEqual('200.00')
         })
 
         it('when depositing the debit amount is a space', () => {

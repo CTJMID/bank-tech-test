@@ -1,4 +1,4 @@
-const Statement = require('./statement')
+const Statement = require('../lib/statement')
 
 describe('Statement', () => {
 
