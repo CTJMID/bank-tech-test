@@ -102,24 +102,24 @@ describe('Account', () => {
 
         it('should have 1 item after 1 deposit transcation', ()  =>  {
             account.depositFunds(100);
-            expect(account.history.length).toEqual(1);
+            expect(account.history).toHaveLength(1);
         })
 
         it('should have 2 item after 2 deposit transcation', ()  =>  {
             account.depositFunds(100)
             account.depositFunds(100)
-            expect(account.history.length).toEqual(2);
+            expect(account.history).toHaveLength(2);
         })
 
         it('should have 1 item after 1 withdrawal transcation', ()  =>  {
             account.withdrawFunds(100)
-            expect(account.history.length).toEqual(1);
+            expect(account.history).toHaveLength(1);
         })
 
         it('should have 2 item after 2 withdrawal transcation', ()  =>  {
             account.withdrawFunds(100)
             account.withdrawFunds(100)
-            expect(account.history.length).toEqual(2);
+            expect(account.history).toHaveLength(2);
         })
 
         it('should be able to access first trasaction balance in account history', ()  =>  {
@@ -187,11 +187,13 @@ describe('Account', () => {
 
         it('returns the correct header', () => {
             expect(account.printStatement()).toEqual(header)
+            expect(global.console.log).toHaveBeenCalledWith(header)
         })
 
         it('returns header and transcation info after 1 transcation', () => {
             account.depositFunds(100);
             expect(account.printStatement()).toEqual(`${header}${transactionOne}`)
+            expect(global.console.log).toHaveBeenCalledWith(`${header}${transactionOne}`)
         })
 
         it('returns header and transcation info after 2 transcations', () => {
