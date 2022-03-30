@@ -177,9 +177,9 @@ describe('Account', () => {
 
     describe ('printStatement', () => {
 
-        let header = 'date || credit || debit || balance\r\n';
-        let transactionOne = '22/11/2021 || 100 ||    || 100\r\n';
-        let transactionTwo = '12/12/2000 ||    || 50 || 50\r\n';
+        let header = 'date || credit || debit || balance\n';
+        let transactionOne = '22/11/2021 || 100.00 ||    || 100.00\n';
+        let transactionTwo = '12/12/2000 ||    || 50.00 || 50.00\n';
 
         it('returns the correct header', () => {
             expect(account.printStatement()).toEqual(header)
