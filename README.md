@@ -33,11 +33,11 @@ Key Verbs (methods):
 
 ## To Run:
 
-- run 'npm init -y' and 'npm install' to install environmnet and dependancies
+- run 'npm install' to install environment and dependancies
 - open Node in terminal
 - require the account.js file with the following command :
 ```
-const Account = require('./account')
+const Account = require('./lib/account')
 ```
 - make an instance of the Account Class
 -  to deposit funds call 'despositFunds(amount)', passing the deposit amount as argument.
@@ -65,7 +65,7 @@ Please see an example of the met acceptance criteria, before submission and feeb
 - Reorganise files separating test and logic - implemented spec and lib files
 - Further refactor suggested to separate out concerns in Transaction class - date & integer formating have been integrated into Transcation class
 - Further refactor suggested to separate out conerns in Statement class - all formatting and printing have been integrated into Statement class.
-- Mosts tests rely on state; make use of different jest matchers to diversify testing suites and test more behavioural returns - IN PROGRESS
+- Mosts tests rely on state; make use of different jest matchers to diversify testing suites and test more behavioural returns - have implemented new matcher, and used a global console mock to test the console statements, have also made use of doubles in Statement testing suite.
 
 Please see an example of the met acceptance criteria, before submission and feeback: 
 
