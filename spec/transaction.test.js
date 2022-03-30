@@ -14,7 +14,7 @@ describe('Transaction',  () => {
     });
 
     it('stores and formats the date of the transaction', () => {
-        expect(transaction.date).toEqual('22-11-2021')
+        expect(transaction.date).toEqual('22/11/2021')
     })
 
     it('stores the credit amount of the transaction', () => {
@@ -30,7 +30,7 @@ describe('Transaction',  () => {
     })
 
     it('returns a formatted string when called', () => {
-        expect(transaction.formatTransaction()).toEqual('22-11-2021 || 100.00 || 200.00 || 300.00')
+        expect(transaction.formatTransaction()).toEqual('22/11/2021 || 100.00 || 200.00 || 300.00')
     })
 
 

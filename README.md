@@ -46,7 +46,7 @@ const Account = require('./account')
 
 
 
-Please see an example of the met acceptance criteria:
+Please see an example of the met acceptance criteria, before submission and feeback: 
 
 ![](./Acceptance-criteria.png)
 
@@ -55,3 +55,22 @@ Please see an example of the met acceptance criteria:
 
 - have incororporated a automated and formatted date on transcations
 - have sucessfully isolated this in testing
+
+## Feedback after first submission & actions to address:
+
+- Automate the date input using JSDate object - implemented and mocked within tests
+- Missing decimal points from acceptance criteria - implented by parseFloat function
+- Formal syntax '\n' visible in printed statement - altered so that the statement is logged to console, and breaks lines where instructed.
+- Use whole words, not figures or letters when running examples in node - corrected as seen in new screen shot
+- Reorganise files separating test and logic - implemented spec and lib files
+- Further refactor suggested to separate out concerns in Transaction class - date & integer formating have been integrated into Transcation class
+- Further refactor suggested to separate out conerns in Statement class - all formatting and printing have been integrated into Statement class.
+- Mosts tests rely on state; make use of different jest matchers to diversify testing suites and test more behavioural returns - IN PROGRESS
+
+Please see an example of the met acceptance criteria, before submission and feeback: 
+
+![](./Acceptance-criteria-2.png)
+
+
+
+

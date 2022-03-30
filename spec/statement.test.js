@@ -2,8 +2,8 @@ const Statement = require('../lib/statement')
 
 describe('Statement', () => {
 
-    it('returns a header when called', () => {
-        const statement = new Statement([1,2])
+    it('returns a header when called with empty transaction history', () => {
+        const statement = new Statement([])
         expect(statement.formatHeader()).toEqual('date || credit || debit || balance\n')
     })
 

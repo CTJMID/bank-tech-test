@@ -166,20 +166,20 @@ describe('Account', () => {
 
         it('stores the date that a depoist is made', () => {
             account.depositFunds(100)
-            expect(account.history[0].date).toEqual('22-11-2021')
+            expect(account.history[0].date).toEqual('22/11/2021')
         })
 
         it('stores the date that a withdrawal is made', () => {
             account.withdrawFunds(100)
-            expect(account.history[0].date).toEqual('22-11-2021')
+            expect(account.history[0].date).toEqual('22/11/2021')
         })
     })
 
     describe ('printStatement', () => {
 
-        let header = 'date || credit || debit || balance\n';
-        let transactionOne = '22-11-2021 || 100 ||    || 100\n';
-        let transactionTwo = '12-12-2000 ||    || 50 || 50\n';
+        let header = 'date || credit || debit || balance\r\n';
+        let transactionOne = '22/11/2021 || 100 ||    || 100\r\n';
+        let transactionTwo = '12/12/2000 ||    || 50 || 50\r\n';
 
         it('returns the correct header', () => {
             expect(account.printStatement()).toEqual(header)
