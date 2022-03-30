@@ -18,8 +18,16 @@ describe('Account', () => {
     });
 
     
+    it('Should be able to access balance', () => {
+        expect(account).toHaveProperty('balance');
+    })
+
     it('Should start with a balanace of zero', () => {
         expect(account.balance).toEqual(0);
+    })
+
+    it('Should be able to access history', () => {
+        expect(account).toHaveProperty('history');
     })
 
     it('Should start with an empty transaction history', () => {
