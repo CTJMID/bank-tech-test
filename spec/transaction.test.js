@@ -13,6 +13,15 @@ describe('Transaction',  () => {
         MockDate.reset();
     });
 
+    it('reformats the date to the desired string', () => {
+        expect(transaction.formatDate()).toEqual('22/11/2021')
+    })
+
+    it('can access date property', () => {
+        expect(transaction).toHaveProperty('date')
+    })
+
+
     it('stores and formats the date of the transaction', () => {
         expect(transaction.date).toEqual('22/11/2021')
     })
