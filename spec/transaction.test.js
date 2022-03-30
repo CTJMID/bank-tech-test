@@ -26,12 +26,32 @@ describe('Transaction',  () => {
         expect(transaction.date).toEqual('22/11/2021')
     })
 
+    it('converts rounded integers to a string with 2 decimal places', () => {
+        expect(transaction.formatAmount(1000)).toEqual('1000.00')
+    })
+
+    it('does not convert space string, and return the same space string', () => {
+        expect(transaction.formatAmount('  ')).toEqual('  ')
+    })
+
+    it('can access credit property', () => {
+        expect(transaction).toHaveProperty('credit')
+    })
+
     it('stores the credit amount of the transaction', () => {
         expect(transaction.credit).toEqual('100.00')
     })
 
+    it('can access debit property', () => {
+        expect(transaction).toHaveProperty('debit')
+    })
+
     it('stores the debit amount of the transaction', () => {
         expect(transaction.debit).toEqual('200.00')
+    })
+
+    it('can access balance property', () => {
+        expect(transaction).toHaveProperty('balance')
     })
 
     it('stores the balance amount of the transaction', () => {
