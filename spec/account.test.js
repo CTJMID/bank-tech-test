@@ -1,6 +1,10 @@
 const Account = require('../lib/account')
 const MockDate = require('mockdate');
 
+global.console = {
+    log: jest.fn(),
+}
+
 describe('Account', () => {
 
     let account;
@@ -195,6 +199,7 @@ describe('Account', () => {
             MockDate.set(new Date('2000-12-12'))
             account.withdrawFunds(50);
             expect(account.printStatement()).toEqual(`${header}${transactionTwo}${transactionOne}`)
+            expect(global.console.log).toHaveBeenCalledWith(`${header}${transactionTwo}${transactionOne}`)
         })
 
     })

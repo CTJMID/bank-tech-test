@@ -1,5 +1,9 @@
 const Statement = require('../lib/statement')
 
+global.console = {
+    log: jest.fn(),
+}
+
 describe('Statement', () => {
 
     it('returns a header when called with empty transaction history', () => {
@@ -11,6 +15,15 @@ describe('Statement', () => {
         const statement = new Statement(['a','b','c'])
         expect(statement.formatBody()).toEqual(`c\nb\na\n`)
     })
+
+    it('prints to the console ', ()  => {
+        const statement = new Statement(['a','b','c'])
+        statement.printFinalStatement()
+        expect(global.console.log).toHaveBeenCalledWith(
+            `c\nb\na\n`
+          )  
+    })
+
 
 
 })
